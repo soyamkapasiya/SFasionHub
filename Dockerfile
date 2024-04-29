@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:18.0.1-jdk-slim
-COPY target/*.jar SFasionHub.jar
+COPY --from=build /target/SFasionHub-0.0.1-SNAPSHOT.jar SFasionHub.jar
 EXPOSE 8080
 ENTRYPOINT [ "java","-jar","SFasionHub.jar" ]
