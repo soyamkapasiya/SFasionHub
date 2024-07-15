@@ -13,18 +13,13 @@
     <title>LoginPage</title>
 
     <style>
+        /*a:hover{*/
+        /*    color: #3ab9c5;*/
+        /*    text-decoration: underline;*/
+        /*}*/
 
         @import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
-        .btn:not(.nav-btns button){
-            background-color: #fff;
-            color: rgb(85, 85, 85);
-            padding: 10px 28px;
-            border-radius: 25px;
-            border: none;
-        }
-        body{
-            background: white;
-        }
+
         .navbar {
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
         }
@@ -34,6 +29,10 @@
         .navbar .navbar-nav .nav-link {
             color: #000;
         }
+        .navbar .navbar-nav .nav-link:hover{
+            text-decoration: underline;
+        }
+
         @media screen and (min-width: 1024px) {
             .navbar {
                 letter-spacing: 0.1em;
@@ -57,10 +56,6 @@
                 flex-direction: column-reverse;
                 align-items: flex-end;
             }
-            .search-and-icons {
-                display: flex;
-                align-items: center;
-            }
         }
         .search-and-icons form input {
             border-radius: 0;
@@ -76,16 +71,171 @@
         .search-and-icons .user-icons div {
             padding-right: 1em;
         }
-        .contact-info p,
-        .contact-info a {
-            font-size: 0.9em;
-            padding-right: 1em;
-            color: grey;
+
+    </style>
+    <style>
+        :root{
+            --lg-font: 'Kaisei Tokumin', serif;
+            --sm-font: 'Poppins', sans-serif;
+            --pink: #3ab9c5;
         }
-        .contact-info a {
-            padding-right: 0;
+        body{
+            font-family: var(--sm-font);
         }
 
+        /* button */
+        .bg-primary{
+            background-color: var(--pink)!important;
+        }
+
+        .btn:not(.nav-btns button){
+            background-color: var(--pink);
+            color: white;
+            padding: 10px 28px;
+            border-radius: 25px;
+            border: 1px solid var(--pink);
+        }
+        .btn:not(.nav-btns button):hover{
+            background-color: var(--pink);
+            color: #fff;
+            border-color: var(--pink);
+        }
+
+        /* text color */
+        .text-primary{
+            color: var(--pink)!important;
+        }
+
+        /* header */
+        #header{
+            background: url("https://media.istockphoto.com/id/1400248058/photo/clothes-on-hangers-new-fashion-collection-at-fashionable-clothes-store-clothing-rental-or.jpg?s=612x612&w=0&k=20&c=OVIaQ53rN2Y35fH4rBEoUwVAADTLSKwgc9k4katrXrs=") center/cover no-repeat;
+        }
+        .carousel-inner h1{
+            font-size: 60px;
+            font-family: var(--lg-font);
+        }
+        .carousel-item .btn{
+            border-color: #fff!important;
+        }
+        .carousel-item .btn:hover{
+            border-color: var(--pink)!important;
+        }
+
+        /* title */
+        .title h2::before{
+            position: absolute;
+            content: "";
+            width: 4px;
+            height: 50px;
+            background-color: var(--pink);
+            left: -20px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        /* collection */
+        .active-filter-btn{
+            background-color: var(--pink)!important;
+            color: #fff!important;
+            border-color: var(--pink)!important;
+        }
+        .filter-button-group .btn:hover{
+            color: #fff!important;
+        }
+        .collection-img span{
+            top: 20px;
+            right: 20px;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+        }
+
+        /* special */
+        .special-img span{
+            top: 20px;
+            right: 20px;
+        }
+        .special-list .btn{
+            padding: 8px 20px!important;
+        }
+        .special-img img{
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        .special-img:hover img{
+            -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+
+        /* offers */
+        #offers{
+            background: url("https://jump-off-fashion.com/cdn/shop/files/DSC_1517_1440x959_crop_center.jpg?v=1615321253") center/cover no-repeat;
+        }
+        #offers .row{
+            min-height: 60vh;
+        }
+        .offers-content span{
+            font-size: 28px;
+        }
+        .offers-content h2{
+            font-size: 60px;
+            font-family: var(--lg-font);
+        }
+        .offers-content .btn{
+            border-color: transparent!important;
+        }
+
+        /* about */
+        #about{
+            background-color: rgba(179, 179, 179, 0.05);
+        }
+
+        /* newsletter */
+        #newsletter{
+            background-color: rgba(179, 179, 179, 0.05);
+        }
+        #newsletter p{
+            max-width: 600px;
+        }
+        #newsletter .input-group{
+            max-width: 500px;
+        }
+        #newsletter .form-control{
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+        #newsletter .btn{
+            background-color: var(--pink);
+            color: #fff;
+            border-color: var(--pink);
+        }
+        #newsletter .btn:hover{
+            background-color: #000;
+            border-color: #000;
+        }
+
+        /* footer */
+        footer .brand{
+            font-family: var(--lg-font);
+            letter-spacing: 2px;
+        }
+        footer a{
+            color: white;
+        }
+        footer a:hover{
+            color: var(--pink);
+        }
+
+        /* media queries */
+        @media(min-width: 992px){
+            .nav-item{
+                border-bottom: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -93,7 +243,7 @@
 
 <nav class="navbar navbar-expand-md " style="background: #3ab9c5">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="margin-left: 30px">
+        <a class="navbar-brand" th:href="@{/}" style="margin-left: 30px">
             <img th:src="@{/images/logo.jpg}" style="width: 50px; border-radius: 3rem; margin-left: 20px"  class="d-inline-block align-top" alt=""/>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
